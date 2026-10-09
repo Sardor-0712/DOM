@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanShop — zamonaviy demo internet-do‘kon.">
+  <title>UrbanShop — O‘zingizga mos uslub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Yangi mavsum kolleksiyasi — <strong>20% gacha chegirma</strong> <span>✦</span> Demo loyiha</div>
+  <header class="header">
+    <a class="brand" href="#home" aria-label="UrbanShop bosh sahifa"><span class="brand-mark">U</span><span>Urban<span class="brand-light">Shop</span></span></a>
+    <button class="mobile-menu icon-btn" id="mobile-menu" aria-label="Menyuni ochish">☰</button>
+    <nav class="nav" id="nav">
+      <a class="nav-link active" href="#home">Bosh sahifa</a>
+      <a class="nav-link" href="#catalog">Katalog</a>
+      <a class="nav-link" href="#deals">Aksiyalar</a>
+      <a class="nav-link" href="#about">Biz haqimizda</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Mahsulot qidirish..." aria-label="Mahsulot qidirish"><kbd>↵</kbd></label>
+      <button class="icon-btn" id="theme-toggle" aria-label="Mavzuni almashtirish" title="Dark/Light">☼</button>
+      <button class="icon-btn" id="favorites-open" aria-label="Sevimlilar" title="Sevimlilar">♡<span class="tiny-count" id="favorite-count">0</span></button>
+      <button class="cart-button" id="cart-open" aria-label="Savatchani ochish">Savatcha <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YANGI MAVSUM · 2026</div>
+        <h1>Sizning uslubingiz.<br><span>Yangi daraja.</span></h1>
+        <p>Har kuni uchun tanlangan texnika, aksessuar va kiyimlar. O‘zingizga mosini toping — qulay, sodda va ishonchli.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#catalog">Katalogni ko‘rish <span>↗</span></a><a class="text-link" href="#deals">Aksiyalarni ko‘rish <span>→</span></a></div>
+        <div class="hero-stats"><div><strong>2 400+</strong><span>mahsulot</span></div><i></i><div><strong>18 ming</strong><span>mamnun xaridor</span></div><i></i><div><strong>4.9/5</strong><span>mijozlar bahosi</span></div></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-tag tag-top"><span class="tag-icon">✦</span><div><b>Yangi kolleksiya</b><small>Ommabop tanlovlar</small></div></div>
+        <img class="hero-product" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85" alt="Oq va qizil sport oyoq kiyimi">
+        <div class="hero-product-label"><span class="label-dot"></span><div><small>HAFTANING TANLOVI</small><strong>Street Runner X</strong></div><b>899 000 so‘m</b></div>
+        <div class="hero-discount">−20%<small>CHEGIRMA</small></div>
+      </div>
+    </section>
+
+    <section class="benefits section-wrap" aria-label="Afzalliklar">
+      <div class="benefit"><span class="benefit-icon">◇</span><div><b>Sifat kafolati</b><small>Tanlangan mahsulotlar</small></div></div>
+      <div class="benefit"><span class="benefit-icon">⌁</span><div><b>Tez yetkazib berish</b><small>O‘zbekiston bo‘ylab</small></div></div>
+      <div class="benefit"><span class="benefit-icon">▣</span><div><b>Qulay to‘lov</b><small>Oson va xavfsiz</small></div></div>
+      <div class="benefit"><span class="benefit-icon">☏</span><div><b>24/7 yordam</b><small>Sizga ko‘mak beramiz</small></div></div>
+    </section>
+
+    <section class="section-wrap section-block" id="catalog">
+      <div class="section-heading"><div><div class="eyebrow">O‘ZINGIZGA MOSINI TOPING</div><h2>Mashhur kategoriyalar</h2></div><a class="text-link" href="#products">Barchasini ko‘rish <span>→</span></a></div>
+      <div class="category-grid" id="categories">
+        <button class="category-card selected" data-category="Barchasi"><span class="category-emoji">✳</span><b>Barchasi</b><small>Hammasi bir joyda</small></button>
+        <button class="category-card" data-category="Texnika"><span class="category-emoji">▣</span><b>Texnika</b><small>Telefon va gadjetlar</small></button>
+        <button class="category-card" data-category="Audio"><span class="category-emoji">♫</span><b>Audio</b><small>Ovoz olamiga sho‘ng‘ing</small></button>
+        <button class="category-card" data-category="Kiyim"><span class="category-emoji">♧</span><b>Kiyim</b><small>Har kun uchun uslub</small></button>
+        <button class="category-card" data-category="Poyabzal"><span class="category-emoji">◒</span><b>Poyabzal</b><small>Qadamlaringizga mos</small></button>
+        <button class="category-card" data-category="Aksessuar"><span class="category-emoji">◇</span><b>Aksessuar</b><small>Kichik detal, katta farq</small></button>
+      </div>
+    </section>
+
+    <section class="section-wrap section-block" id="deals">
+      <div class="promo-strip"><div><span class="promo-kicker">URBAN DEALS · CHEKLANGAN TAKLIF</span><h2>Sevimli mahsulotingizni<br>yaxshiroq narxda oling.</h2><p>Aksiyadagi mahsulotlarni ko‘ring va yangi sevimlingizni toping.</p><a class="btn btn-primary" href="#products">Aksiyalarni ko‘rish <span>↗</span></a></div><div class="promo-art"><span class="promo-circle"></span><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85" alt="Simsiz quloqchinlar"></div><div class="promo-badge">HOT<br>DEAL</div></div>
+    </section>
+
+    <section class="section-wrap section-block" id="products">
+      <div class="section-heading products-heading"><div><div class="eyebrow">SIZ UCHUN SARALANDI</div><h2 id="products-title">Ommabop mahsulotlar <span class="heading-spark">✦</span></h2></div><div class="product-controls"><label class="sort-label">Saralash <select id="sort"><option value="featured">Tavsiya etilgan</option><option value="price-low">Narx: arzon → qimmat</option><option value="price-high">Narx: qimmat → arzon</option><option value="rating">Reyting bo‘yicha</option></select></label></div></div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="empty-state"><span>⌕</span><h3>Mahsulot topilmadi</h3><p>Boshqa so‘z yoki kategoriyani sinab ko‘ring.</p><button class="btn btn-secondary" id="reset-filters">Filtrlarni tozalash</button></div>
+      <div class="center-action"><button class="btn btn-secondary" id="show-all">Barcha mahsulotlar <span>↓</span></button></div>
+    </section>
+
+    <section class="newsletter section-wrap" id="about"><div class="newsletter-icon">✉</div><div><div class="eyebrow">URBAN COMMUNITY</div><h2>Yangiliklardan xabardor bo‘ling.</h2><p>Yangi mahsulotlar va maxsus takliflar haqida birinchilardan bo‘lib biling.</p></div><form id="newsletter-form" class="newsletter-form"><input type="email" id="newsletter-email" placeholder="Email manzilingiz" required><button class="btn btn-primary" type="submit">Obuna bo‘lish <span>→</span></button></form></section>
+  </main>
+
+  <footer class="footer section-wrap"><a class="brand" href="#home"><span class="brand-mark">U</span><span>Urban<span class="brand-light">Shop</span></span></a><p>Shahar ritmiga mos tanlov.</p><div class="footer-links"><a href="#catalog">Katalog</a><a href="#about">Biz haqimizda</a><a href="mailto:hello@urbanshop.demo">Aloqa</a></div><small>© 2026 UrbanShop. Demo loyiha — haqiqiy xarid amalga oshirilmaydi.</small></footer>
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cart-drawer" aria-label="Savatcha" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow">SIZNING TANLOVINGIZ</span><h2>Savatcha <span id="drawer-count">(0)</span></h2></div><button class="icon-btn close-drawer" aria-label="Yopish">✕</button></div><div class="drawer-body" id="cart-items"></div><div class="drawer-foot"><div class="subtotal"><span>Jami</span><strong id="cart-total">0 so‘m</strong></div><p class="drawer-note">Bu demo do‘kon. Buyurtma tugmasi faqat sinov oynasini ko‘rsatadi.</p><button class="btn btn-primary checkout-btn" id="checkout">Buyurtmani rasmiylashtirish <span>→</span></button><button class="text-link clear-cart" id="clear-cart">Savatchani tozalash</button></div></aside>
+  <aside class="drawer" id="favorites-drawer" aria-label="Sevimlilar" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow">SAQLAB QO‘YILGANLAR</span><h2>Sevimlilar <span id="favorites-drawer-count">(0)</span></h2></div><button class="icon-btn close-drawer" aria-label="Yopish">✕</button></div><div class="drawer-body" id="favorite-items"></div></aside>
+
+  <dialog class="product-modal" id="product-modal"><button class="icon-btn modal-close" id="modal-close" aria-label="Yopish">✕</button><div id="modal-content"></div></dialog>
+</body>
+</html>
