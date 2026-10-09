@@ -1,12 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content="#090910">
+    <meta name="description"
+        content="NEXORA — eng zo'r kompyuter va mobil o'yinlar, gaming yangiliklari va top o'yinlar katalogi.">
+    <title>NEXORA — Gaming Universe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <h1>Behruz Hamrayev Hello World </h1>
-    <h2>Behruz 2</h2>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="navbar">
+        <a href="#" class="logo"><span class="logo-icon">N</span> NEXORA<span class="logo-dot">.</span></a>
+
+        <nav class="nav-links">
+            <a href="#home" class="nav-link active">Bosh sahifa</a>
+            <a href="#games" class="nav-link">O'yinlar</a>
+            <a href="#trending" class="nav-link">Top o'yinlar</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-button" id="themeBtn" aria-label="Rang rejimini o'zgartirish">☼</button>
+            <a class="nav-cta" href="#games">O'ynashni boshlash ↗</a>
+            <button class="menu-button" id="menuBtn" aria-label="Menyuni ochish">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="eyebrow"><span class="live-dot"></span> YOUR NEXT LEVEL STARTS HERE</div>
+                <h1>O'YINLAR<br>OLAMIGA <span class="gradient-text">XUSH KELIBSAN.</span></h1>
+                <p class="hero-description">
+                    Eng mashhur o'yinlarni kashf et. Yangi sarguzashtlarni boshlagin.
+                    O'z gaming olamingni yarat!
+                </p>
+                <div class="hero-actions">
+                    <a href="#games" class="primary-button">O'yinlarni ko'rish <span>↗</span></a>
+                    <a href="#trending" class="secondary-button">Top o'yinlar ↓</a>
+                </div>
+                <div class="hero-stats">
+                    <div><strong>06+</strong><span>Tanlangan o'yin</span></div>
+                    <div class="stat-divider"></div>
+                    <div><strong>03</strong><span>Gaming janri</span></div>
+                    <div class="stat-divider"></div>
+                    <div><strong>∞</strong><span>Sarguzasht</span></div>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="hero-orbit orbit-one"></div>
+                <div class="hero-orbit orbit-two"></div>
+                <div class="hero-core">
+                    <div class="core-symbol">N<span>✦</span></div>
+                    <span class="core-caption">ENTER THE GAME</span>
+                </div>
+                <div class="floating-tag tag-top">⚡ NEXT LEVEL</div>
+                <div class="floating-tag tag-bottom">◈ GAME ON</div>
+            </div>
+        </section>
+
+        <section class="ticker" aria-label="Gaming yangiliklari">
+            <div class="ticker-track">
+                <span>✦ DISCOVER GAMES</span><span>✦ LEVEL UP</span>
+                <span>✦ PLAY YOUR WAY</span><span>✦ GAMING UNIVERSE</span>
+                <span>✦ DISCOVER GAMES</span><span>✦ LEVEL UP</span>
+                <span>✦ PLAY YOUR WAY</span><span>✦ GAMING UNIVERSE</span>
+            </div>
+        </section>
+
+        <section class="games-section" id="games">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">CHOOSE YOUR ADVENTURE</div>
+                    <h2>O'YINLAR <span class="gradient-text">KUTUBXONASI.</span></h2>
+                    <p class="muted">Keyingi sevimli o'yiningni shu yerdan top.</p>
+                </div>
+                <span class="game-counter" id="gameCount">06 TA O'YIN</span>
+            </div>
+
+            <div class="toolbar">
+                <label class="search-box">
+                    <span>⌕</span>
+                    <input type="search" id="searchInput" placeholder="O'yin nomini qidir..."
+                        aria-label="O'yinlarni qidirish">
+                    <kbd>SEARCH</kbd>
+                </label>
+                <div class="filters" id="filters">
+                    <button class="filter-btn active" data-filter="all">Barchasi</button>
+                    <button class="filter-btn" data-filter="action">Action</button>
+                    <button class="filter-btn" data-filter="shooter">Shooter</button>
+                    <button class="filter-btn" data-filter="adventure">Sarguzasht</button>
+                </div>
+            </div>
+
+            <div class="games-grid" id="gamesGrid">
+                <article class="game-card" data-name="Cyberpunk 2077" data-category="action" data-rating="4.8"
+                    data-description="Kelajakdagi Night City shahrida o'z yo'lingni tanla.">
+                    <div class="game-image">
+                        <img src="https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=800&q=85"
+                            alt="Cyberpunk uslubidagi futuristik shahar" loading="lazy">
+                        <span class="game-badge">TRENDING</span>
+                        <button class="favorite-btn" aria-label="Sevimlilarga qo'shish" aria-pressed="false">♡</button>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-meta"><span>ACTION RPG</span><span>★ 4.8</span></div>
+                        <h3>Cyberpunk 2077</h3>
+                        <p>Kelajak shahri seni kutmoqda.</p>
+                        <button class="game-link" data-game="Cyberpunk 2077">Batafsil ko'rish <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Grand Theft Auto V" data-category="action" data-rating="4.9"
+                    data-description="Los Santos shahrida erkin harakat qil va yangi sarguzashtlarni kashf et.">
+                    <div class="game-image">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=85"
+                            alt="Kompyuter o'yinlari va gaming qurilmalari" loading="lazy">
+                        <span class="game-badge">POPULAR</span>
+                        <button class="favorite-btn" aria-label="Sevimlilarga qo'shish" aria-pressed="false">♡</button>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-meta"><span>OPEN WORLD</span><span>★ 4.9</span></div>
+                        <h3>Grand Theft Auto V</h3>
+                        <p>Cheksiz imkoniyatlar dunyosi.</p>
+                        <button class="game-link" data-game="Grand Theft Auto V">Batafsil ko'rish
+                            <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Call of Duty" data-category="shooter" data-rating="4.7"
+                    data-description="Jamoang bilan taktik janglarda qatnash va mahoratingni sinab ko'r.">
+                    <div class="game-image">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=85"
+                            alt="Esports musobaqasi" loading="lazy">
+                        <span class="game-badge">FPS</span>
+                        <button class="favorite-btn" aria-label="Sevimlilarga qo'shish" aria-pressed="false">♡</button>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-meta"><span>SHOOTER</span><span>★ 4.7</span></div>
+                        <h3>Call of Duty</h3>
+                        <p>Tezkor janglar va kuchli strategiya.</p>
+                        <button class="game-link" data-game="Call of Duty">Batafsil ko'rish <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Minecraft" data-category="adventure" data-rating="4.9"
+                    data-description="O'z dunyongni qur, resurslarni to'pla va kashfiyotga yo'l ol.">
+                    <div class="game-image">
+                        <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=800&q=85"
+                            alt="Piksel uslubidagi sarguzasht o'yini" loading="lazy">
+                        <span class="game-badge">CREATIVE</span>
+                        <button class="favorite-btn" aria-label="Sevimlilarga qo'shish" aria-pressed="false">♡</button>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-meta"><span>SANDBOX</span><span>★ 4.9</span></div>
+                        <h3>Minecraft</h3>
+                        <p>Faqat tasavvuring bilan cheklan.</p>
+                        <button class="game-link" data-game="Minecraft">Batafsil ko'rish <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="PUBG Battlegrounds" data-category="shooter" data-rating="4.8"
+                    data-description="Omon qolish uchun kurash va oxirgi g'olib bo'lishga intil.">
+                    <div class="game-image">
+                        <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=800&q=85"
+                            alt="Gaming klaviaturasi va rangli chiroqlar" loading="lazy">
+                        <span class="game-badge">BATTLE ROYALE</span>
+                        <button class="favorite-btn" aria-label="Sevimlilarga qo'shish" aria-pressed="false">♡</button>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-meta"><span>SHOOTER</span><span>★ 4.8</span></div>
+                        <h3>PUBG Battlegrounds</h3>
+                        <p>Omon qol. Jang qil. G'olib bo'l.</p>
+                        <button class="game-link" data-game="PUBG Battlegrounds">Batafsil ko'rish
+                            <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Elden Ring" data-category="adventure" data-rating="4.9"
+                    data-description="Sirli dunyoni kashf et va murakkab sinovlarni yengib o't.">
+                    <div class="game-image">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=85"
+                            alt="Fantastik tabiat va sarguzasht manzarasi" loading="lazy">
+                        <span class="game-badge">EPIC QUEST</span>
+                        <button class="favorite-btn" aria-label="Sevimlilarga qo'shish" aria-pressed="false">♡</button>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-meta"><span>ADVENTURE RPG</span><span>★ 4.9</span></div>
+                        <h3>Elden Ring</h3>
+                        <p>Afsonaviy sarguzasht sari yo'l ol.</p>
+                        <button class="game-link" data-game="Elden Ring">Batafsil ko'rish <span>↗</span></button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <span>⌕</span>
+                <h3>O'yin topilmadi</h3>
+                <p>Boshqa nom yoki kategoriyani sinab ko'r.</p>
+            </div>
+        </section>
+
+        <section class="trending-section" id="trending">
+            <div class="trending-content">
+                <div class="eyebrow">READY PLAYER ONE?</div>
+                <h2>O'YINNI TANLA.<br><span class="gradient-text">AFSONAGA AYLAN.</span></h2>
+                <p>Yangi olamlar, yangi maqsadlar va yangi rekordlar seni kutmoqda.</p>
+                <a href="#games" class="primary-button">Sarguzashtni boshlash ↗</a>
+            </div>
+            <div class="trending-decoration"><span>LEVEL</span><strong>UP</strong><i>✦</i></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#home" class="logo"><span class="logo-icon">N</span> NEXORA<span class="logo-dot">.</span></a>
+        <p>© <span id="year"></span> NEXORA GAMING. Barcha huquqlar saqlangan.</p>
+        <a href="#home" class="back-top">Yuqoriga ↑</a>
+    </footer>
+
+    <dialog class="game-dialog" id="gameDialog">
+        <button class="dialog-close" id="dialogClose" aria-label="Yopish">✕</button>
+        <div class="eyebrow">GAME DETAILS</div>
+        <h2 id="dialogTitle">O'yin nomi</h2>
+        <p id="dialogDescription"></p>
+        <a id="officialSearch" class="primary-button" href="#" target="_blank" rel="noopener noreferrer">O'yinni
+            qidirish ↗</a>
+    </dialog>
 </body>
+
 </html>
