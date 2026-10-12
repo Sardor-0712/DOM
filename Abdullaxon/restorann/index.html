@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdullaxon Gaming Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- PARTICLES BACKGROUND -->
+  <div id="particles"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-icon"><i class="fas fa-gamepad"></i></span>
+        <span class="logo-text">NEXUS<span class="accent">ZONE</span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Bosh sahifa</a></li>
+        <li><a href="#games">O'yinlar</a></li>
+        <li><a href="#pricing">Narxlar</a></li>
+        <li><a href="#tournaments">Turnirlar</a></li>
+        <li><a href="#gallery">Galereya</a></li>
+        <li><a href="#contact">Aloqa</a></li>
+      </ul>
+      <button class="book-btn" onclick="openModal('bookingModal')">
+        <i class="fas fa-calendar-plus"></i> Bron qilish
+      </button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-bolt"></i> Shahar #1 Gaming Club</div>
+      <h1 class="hero-title">
+        O'yin<br/>
+        <span class="glitch" data-text="DUNYOSIGA">DUNYOSIGA</span><br/>
+        Xush Kelibsiz!
+      </h1>
+      <p class="hero-subtitle">
+        Ultra HD monitorlar, pro gaming qurilmalar va yuqori tezlikli internet bilan
+        eng yaxshi o'yin tajribasini his eting.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openModal('bookingModal')">
+          <i class="fas fa-play"></i> Hoziroq boshlash
+        </button>
+        <button class="btn-secondary" onclick="scrollTo('#pricing')">
+          <i class="fas fa-tag"></i> Narxlarni ko'rish
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="50">0</span><span>+</span>
+          <p>Gaming PC</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="5000">0</span><span>+</span>
+          <p>Mijozlar</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="100">0</span><span>+</span>
+          <p>Turnirlar</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="24">0</span><span>/7</span>
+          <p>Ochiq</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="monitor-wrap">
+        <div class="monitor">
+          <div class="monitor-screen">
+            <div class="screen-content">
+              <div class="game-ui">
+                <div class="ui-top">
+                  <span class="hp-bar"><span style="width:75%"></span></span>
+                  <span class="score">12,450 XP</span>
+                </div>
+                <div class="ui-center">
+                  <div class="crosshair"></div>
+                </div>
+                <div class="ui-bottom">
+                  <div class="ammo"><i class="fas fa-circle"></i> 30/90</div>
+                  <div class="minimap"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="monitor-stand"></div>
+        </div>
+        <div class="keyboard"></div>
+      </div>
+      <div class="floating-icons">
+        <div class="fi fi-1"><i class="fab fa-steam"></i></div>
+        <div class="fi fi-2"><i class="fab fa-playstation"></i></div>
+        <div class="fi fi-3"><i class="fab fa-xbox"></i></div>
+        <div class="fi fi-4"><i class="fas fa-trophy"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES SECTION -->
+  <section class="games" id="games">
+    <div class="section-header">
+      <div class="section-badge">O'yin Katalogi</div>
+      <h2 class="section-title">Sevimli <span class="accent">O'yinlaringiz</span></h2>
+      <p>200+ dan ortiq o'yinlar mavjud. Har bir janr bo'yicha eng yaxshi tanlov.</p>
+    </div>
+    <div class="game-filter">
+      <button class="filter-btn active" data-filter="all" onclick="filterGames(this, 'all')">Barchasi</button>
+      <button class="filter-btn" data-filter="fps" onclick="filterGames(this, 'fps')">FPS</button>
+      <button class="filter-btn" data-filter="moba" onclick="filterGames(this, 'moba')">MOBA</button>
+      <button class="filter-btn" data-filter="battle" onclick="filterGames(this, 'battle')">Battle Royale</button>
+      <button class="filter-btn" data-filter="sport" onclick="filterGames(this, 'sport')">Sport</button>
+    </div>
+    <div class="games-grid" id="gamesGrid"></div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="pricing" id="pricing">
+    <div class="section-header">
+      <div class="section-badge">Tariflar</div>
+      <h2 class="section-title">Qulay <span class="accent">Narxlar</span></h2>
+      <p>Har xil ehtiyoj uchun moslashtirilgan tariflar</p>
+    </div>
+    <div class="pricing-toggle">
+      <span>Soatlik</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="pricingToggle" onchange="togglePricing()"/>
+        <span class="slider"></span>
+      </label>
+      <span>Oylik <span class="save-badge">-30% tejang!</span></span>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-header">
+          <div class="price-icon"><i class="fas fa-user"></i></div>
+          <h3>Standard</h3>
+          <div class="price-amount">
+            <span class="price-val" data-hourly="15,000" data-monthly="250,000">15,000</span>
+            <span class="price-unit soat-text">so'm/soat</span>
+          </div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> Full HD Monitor (1080p)</li>
+          <li><i class="fas fa-check"></i> Gaming Sichqoncha va Klaviatura</li>
+          <li><i class="fas fa-check"></i> 100 Mbps Internet</li>
+          <li><i class="fas fa-check"></i> Quloqchin</li>
+          <li><i class="fas fa-times"></i> VIP Zona</li>
+          <li><i class="fas fa-times"></i> Ichimliklar</li>
+        </ul>
+        <button class="price-btn" onclick="openModal('bookingModal')">Tanlash</button>
+      </div>
+
+      <div class="price-card popular">
+        <div class="popular-badge"><i class="fas fa-fire"></i> Mashhur</div>
+        <div class="price-header">
+          <div class="price-icon"><i class="fas fa-star"></i></div>
+          <h3>Pro</h3>
+          <div class="price-amount">
+            <span class="price-val" data-hourly="25,000" data-monthly="400,000">25,000</span>
+            <span class="price-unit soat-text">so'm/soat</span>
+          </div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> 2K Monitor (144Hz)</li>
+          <li><i class="fas fa-check"></i> Pro Gaming Set</li>
+          <li><i class="fas fa-check"></i> 500 Mbps Internet</li>
+          <li><i class="fas fa-check"></i> Noise-cancelling Quloqchin</li>
+          <li><i class="fas fa-check"></i> VIP Zona</li>
+          <li><i class="fas fa-times"></i> Premium Ichimliklar</li>
+        </ul>
+        <button class="price-btn" onclick="openModal('bookingModal')">Tanlash</button>
+      </div>
+
+      <div class="price-card">
+        <div class="price-header">
+          <div class="price-icon"><i class="fas fa-crown"></i></div>
+          <h3>Elite</h3>
+          <div class="price-amount">
+            <span class="price-val" data-hourly="40,000" data-monthly="600,000">40,000</span>
+            <span class="price-unit soat-text">so'm/soat</span>
+          </div>
+        </div>
+        <ul class="price-features">
+          <li><i class="fas fa-check"></i> 4K Monitor (240Hz)</li>
+          <li><i class="fas fa-check"></i> Elite Gaming Set</li>
+          <li><i class="fas fa-check"></i> 1 Gbps Internet</li>
+          <li><i class="fas fa-check"></i> Premium Quloqchin</li>
+          <li><i class="fas fa-check"></i> VIP Shaxsiy Kabina</li>
+          <li><i class="fas fa-check"></i> Cheksiz Ichimliklar</li>
+        </ul>
+        <button class="price-btn" onclick="openModal('bookingModal')">Tanlash</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURNAMENTS -->
+  <section class="tournaments" id="tournaments">
+    <div class="section-header">
+      <div class="section-badge">Musobaqalar</div>
+      <h2 class="section-title">Yaqindagi <span class="accent">Turnirlar</span></h2>
+      <p>Ro'yxatdan o'ting va sovrinlar uchun kurashing!</p>
+    </div>
+    <div class="tournaments-grid" id="tournamentsGrid"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-header">
+      <div class="section-badge">Galereya</div>
+      <h2 class="section-title">Bizning <span class="accent">Muhit</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gal-item gal-big" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+        <div class="gal-overlay">
+          <div class="gal-icon"><i class="fas fa-desktop"></i></div>
+          <p>Gaming Zalimiz</p>
+        </div>
+      </div>
+      <div class="gal-item" style="background: linear-gradient(135deg, #0f3460, #533483);">
+        <div class="gal-overlay">
+          <div class="gal-icon"><i class="fas fa-trophy"></i></div>
+          <p>Turnir Maydoni</p>
+        </div>
+      </div>
+      <div class="gal-item" style="background: linear-gradient(135deg, #533483, #e94560);">
+        <div class="gal-overlay">
+          <div class="gal-icon"><i class="fas fa-headset"></i></div>
+          <p>VIP Kabinalar</p>
+        </div>
+      </div>
+      <div class="gal-item" style="background: linear-gradient(135deg, #e94560, #1a1a2e);">
+        <div class="gal-overlay">
+          <div class="gal-icon"><i class="fas fa-coffee"></i></div>
+          <p>Lounge Zona</p>
+        </div>
+      </div>
+      <div class="gal-item" style="background: linear-gradient(135deg, #16213e, #533483);">
+        <div class="gal-overlay">
+          <div class="gal-icon"><i class="fas fa-gamepad"></i></div>
+          <p>Konsol Zona</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <div class="section-badge">Aloqa</div>
+      <h2 class="section-title">Biz Bilan <span class="accent">Bog'laning</span></h2>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h4>Manzil</h4>
+            <p>Toshkent, Chilonzor tumani, Bunyodkor ko'chasi, 15-uy</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <h4>Telefon</h4>
+            <p>+998 90 123 45 67</p>
+            <p>+998 71 234 56 78</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4>Ish vaqti</h4>
+            <p>Dushanba – Yakshanba</p>
+            <p>24 soat / 7 kun</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h4>Email</h4>
+            <p>info@nexuszone.uz</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label>Ismingiz</label>
+          <input type="text" placeholder="Ism Familiya" required/>
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" placeholder="+998 90 000 00 00" required/>
+        </div>
+        <div class="form-group">
+          <label>Xabar</label>
+          <textarea placeholder="Xabaringizni yozing..." rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%">
+          <i class="fas fa-paper-plane"></i> Yuborish
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <i class="fas fa-gamepad"></i>
+        <span>NEXUS<span class="accent">ZONE</span></span>
+      </div>
+      <p>© 2026 NexusZone Gaming Club. Barcha huquqlar himoyalangan.</p>
+      <div class="footer-links">
+        <a href="#">Maxfiylik siyosati</a>
+        <a href="#">Foydalanish shartlari</a>
+        <a href="#">Qayta aloqa</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-overlay" onclick="closeModal('bookingModal')"></div>
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('bookingModal')"><i class="fas fa-times"></i></button>
+      <h2><i class="fas fa-calendar-plus accent"></i> Joy Bron Qilish</h2>
+      <form onsubmit="confirmBooking(event)">
+        <div class="form-group">
+          <label>Ism Familiya</label>
+          <input type="text" placeholder="Abdullaxon Toshmatov" required/>
+        </div>
+        <div class="form-group">
+          <label>Telefon raqam</label>
+          <input type="tel" placeholder="+998 90 000 00 00" required/>
+        </div>
+        <div class="form-group">
+          <label>Tarif tanlang</label>
+          <select>
+            <option>Standard — 15,000 so'm/soat</option>
+            <option>Pro — 25,000 so'm/soat</option>
+            <option>Elite — 40,000 so'm/soat</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Sana</label>
+            <input type="date" required/>
+          </div>
+          <div class="form-group">
+            <label>Vaqt</label>
+            <input type="time" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Soat soni</label>
+          <input type="number" min="1" max="12" value="2" required/>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; margin-top:8px">
+          <i class="fas fa-check"></i> Tasdiqlash
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SUCCESS TOAST -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Muvaffaqiyatli!</span>
+  </div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
